@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import navIcon1 from '../assets/img/nav-icon1.svg';
-import navIcon2 from '../assets/img/nav-icon2.svg';
-import navIcon3 from '../assets/img/nav-icon3.svg';
-
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 
 export const NavBar = () => {
@@ -49,14 +48,14 @@ export const NavBar = () => {
                     </Nav>
                     <span className='navbar-text'>
                         <div className='social-icon'>
-                            <a href='#'>
-                                <img src={navIcon1} alt='' />
+                            <a href='https://www.linkedin.com/in/arun1504/'>
+                                <LinkedInIcon className=".icon-links"/>
                             </a>
-                            <a href='#'>
-                                <img src={navIcon2} alt='' />
+                            <a href='https://github.com/aroon1504'>
+                                <GitHubIcon className=".icon-links"/>
                             </a>
-                            <a href='#'>
-                                <img src={navIcon3} alt='' />
+                            <a href='https://www.instagram.com/a_r_o_o_n_15/'>
+                               <InstagramIcon className=".icon-links"/>
                             </a>
                         </div>
                         <button className='vvd' onClick={() => console.log('connect')}>
