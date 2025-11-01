@@ -1,0 +1,249 @@
+/************ Skills Css ************/
+.skill {
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-bx {
+  background: #151515;
+  border-radius: 64px;
+  text-align: center;
+  padding: 60px 50px;
+  margin-top: -60px;
+}
+
+.skill h2 {
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 60px;
+}
+
+/* Grid Layout */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+  .skill {
+    padding: 60px 0;
+  }
+
+  .skill-bx {
+    padding: 40px 30px;
+  }
+
+  .skill h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .skill-icon-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .skill-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .skill-item h4 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 464px) {
+  .skill {
+    padding: 40px 0;
+  }
+
+  .skill-bx {
+    padding: 30px 20px;
+    border-radius: 40px;
+  }
+
+  .skill h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .skill-icon-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+
+  .skill-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .skill-item h4 {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+  /* Reduce animation intensity on mobile */
+  .skill-item {
+    animation: fadeInUp 0.6s ease-out forwards, float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+/* Skill Item Container */
+.skill-item {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards, float 3s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+/* Icon Wrapper with Glow Effect */
+.skill-icon-wrapper {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.skill-icon-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #aa367c, #4a2fbd, #aa367c);
+  border-radius: 50%;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+  animation: rotate 3s linear infinite;
+}
+
+.skill-item:hover .skill-icon-wrapper::before {
+  opacity: 1;
+}
+
+.skill-item:hover .skill-icon-wrapper {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 30px rgba(170, 54, 124, 0.6);
+}
+
+/* Skill Image */
+.skill-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.skill-item:hover .skill-img {
+  transform: scale(1.1);
+}
+
+/* Skill Name */
+.skill-item h4 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover h4 {
+  color: #aa367c;
+  transform: translateY(-5px);
+}
+
+/* Keyframe Animations */
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Rotating Gradient Border */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Stagger Animation Delays */
+.skill-item:nth-child(1) {
+  animation-delay: 0s, 0s;
+}
+
+.skill-item:nth-child(2) {
+  animation-delay: 0.15s, 0.3s;
+}
+
+.skill-item:nth-child(3) {
+  animation-delay: 0.3s, 0.6s;
+}
+
+.skill-item:nth-child(4) {
+  animation-delay: 0.45s, 0.9s;
+}
+
+.skill-item:nth-child(5) {
+  animation-delay: 0.6s, 1.2s;
+}
+
+.skill-item:nth-child(6) {
+  animation-delay: 0.75s, 1.5s;
+}
